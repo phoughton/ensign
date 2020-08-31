@@ -1,0 +1,27 @@
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an image to see if its a Teddy Bear, Grizzly Bear or Black Bear!</h1>
+      <hr>
+        {{ messages }}
+        <HR>
+      <form action="/upload-image/" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label>Choose a file to Upload!</label><BR>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image"><BR>
+          </div>
+        </div>
+          <BR>
+        <button type="submit" class="btn btn-primary">Tell me the answer</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
