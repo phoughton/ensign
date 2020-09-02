@@ -3,7 +3,11 @@ from app import app
 from fastai.learner import load_learner
 import pathlib
 from fastai.vision.core import *
-pathlib.PosixPath = pathlib.WindowsPath
+import platform
+
+# Workaround pytorch issue with models developed on linux being used on Windows
+if platform.system() == 'Windows':
+    pathlib.PosixPath = pathlib.WindowsPath
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
