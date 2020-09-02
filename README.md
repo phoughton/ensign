@@ -4,6 +4,13 @@ A simple example bear classifier using colab to create the model and flask to en
 
 Work in progress.
 
+### Quick install using pip & requirements.txt
+Create a virtual environment and type this pip command at the command line. (It's a big install and may take a few minutes.)
+```bash
+pip install -r requirements.txt
+```
+
+
 ### Manual setup
 Create a virtual environment and manually install each of these (in this order)
 ```bash
@@ -15,13 +22,18 @@ pip install pillow
 pip install ipython
 ```
 
-### Quick install using requirements.txt
-Coming soon...
 
 ### Running the app
 The below commands will run the server and will output a URL you can use to access it.
+
+Windows:
 ```bash
 set FLASK_APP=views
 flask run
 ```
 
+Linux/Unix/Mac/Bash:
+```bash
+export FLASK_APP=views
+flask run
+```
