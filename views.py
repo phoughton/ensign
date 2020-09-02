@@ -1,9 +1,9 @@
 from flask import Flask, request, redirect, render_template
 from app import app
-from fastbook import *
-from fastai.vision.widgets import *
-import os
-
+from fastai.learner import load_learner
+import pathlib
+from fastai.vision.core import *
+pathlib.PosixPath = pathlib.WindowsPath
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -30,7 +30,7 @@ def upload_image():
 
 @app.route('/')
 def go_to_upload():
-    return redirect("/upload-image/", messages="")
+    return redirect("upload-image/")
 
 
 if __name__ == '__main__':
