@@ -1,8 +1,8 @@
-from flask import Flask, request, redirect, render_template
+from flask import request, redirect, render_template
 from app import app
 from fastai.learner import load_learner
 import pathlib
-from fastai.vision.core import *
+from fastai.vision.core import PILImage
 import platform
 
 # Workaround pytorch issue with models developed on linux being used on Windows
