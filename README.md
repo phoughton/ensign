@@ -4,7 +4,7 @@ A simple example bear classifier using colab to create the model and flask to en
 
 Work in progress.
 
-### Quick install using pip & requirements.txt
+### Quick install using pip & requirements.txt (recommended)
 Create a virtual environment and type this pip command at the command line. (It's a big install and may take a few minutes.)
 ```bash
 pip install -r requirements.txt
