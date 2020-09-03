@@ -7,7 +7,7 @@ import platform
 
 
 application = Flask(__name__)
-application.config['MAX_CONTENT_LENGTH'] = 6 * 1024 * 1024
+application.config['MAX_CONTENT_LENGTH'] = 12 * 1024 * 1024
 MIN_STANDARD = 0.9
 
 # Workaround pytorch issue with models developed on linux being used on Windows
