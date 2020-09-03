@@ -1,14 +1,19 @@
+from flask import Flask
 from flask import request, redirect, render_template
-from app import app
 from fastai.learner import load_learner
 import pathlib
 from fastai.vision.core import PILImage
 import platform
 
+
+application = Flask(__name__)
+application.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
+
+
 # Workaround pytorch issue with models developed on linux being used on Windows
 if platform.system() == 'Windows':
     pathlib.PosixPath = pathlib.WindowsPath
-
+git add
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 learn_inf = load_learner('export.pkl', cpu=True)
@@ -18,7 +23,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route("/upload-image/", methods=["GET", "POST"])
+@application.route("/upload-image/", methods=["GET", "POST"])
 def upload_image():
     if request.method == "POST":
         if request.files:
@@ -32,10 +37,10 @@ def upload_image():
     return render_template("public/upload_image.html", messages="")
 
 
-@app.route('/')
+@application.route('/')
 def go_to_upload():
     return redirect("upload-image/")
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
