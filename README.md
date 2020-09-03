@@ -1,8 +1,6 @@
-# bear_class
+# Ensign
 
-A simple example bear classifier using colab to create the model and flask to enable a web app.
-
-Work in progress.
+A simple example Flag classifier using colab to create the model and flask to enable a web app.
 
 ### Quick install using pip & requirements.txt (recommended)
 Create a virtual environment and type this pip command at the command line. (It's a big install and may take a few minutes.)

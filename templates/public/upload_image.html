@@ -1,17 +1,22 @@
 
 {% block main %}
-
+<HTML lang="en">
+<HEAD>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ensign, Flag recogniser</title>
+</HEAD>
+<BODY>
 <div class="container">
   <div class="row">
     <div class="col">
+      <h1>Upload an picture of a flag to see what sort of flag you have!</h1>
+      <BR>
+      <H3>{{ messages }}</H3>
+            <BR>
 
-      <h1>Upload an image to see if its a Teddy Bear, Grizzly Bear or Black Bear!</h1>
-      <hr>
-        {{ messages }}
-        <HR>
       <form action="/upload-image/" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-          <label>Choose a file to Upload!</label><BR>
+          <label>Choose a file to Upload!</label><BR><BR>
           <div class="custom-file">
             <input type="file" class="custom-file-input" name="image" id="image"><BR>
           </div>
@@ -19,9 +24,12 @@
           <BR>
         <button type="submit" class="btn btn-primary">Tell me the answer</button>
       </form>
+      <BR>
+      <A HREF="/" >Reset</A>
 
     </div>
   </div>
 </div>
-
+</BODY>
+</HTML>
 {% endblock %}
